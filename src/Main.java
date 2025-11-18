@@ -3,30 +3,21 @@ import java.util.Random;
     public class Main {
 
 
-        public static void main(String args[]) {
+        public static void main(String[] args) {
 
+            Random randNum = new Random();
 
-            int[] nums = getRandom8();
+            OrthogonalMatrix ortMatrix = new OrthogonalMatrix();
 
-            for(int i = 0; i < nums.length; i++){
-                System.out.println(nums[i]);
-            }
+            double[] values = ortMatrix.getOrthogonalMatrix();
 
+            MatrixCreator matrix = new MatrixCreator(values[0],values[1],values[2],values[3],values[4],
+            values[5],values[6],values[7],values[8]);
 
-
-
-            MatrixCreator matrix1 = new MatrixCreator(3,2,4,5);
-
-            MatrixCreator matrixInv = matrix1.getInverse();
-
-            System.out.println(matrixInv);
-
-
-
-
+            System.out.println(matrix);
 
         }
-        public static int[] getRandom8() {
+        public static int[] getRandomNums() {
 
             Random randNum = new Random();
 
@@ -55,5 +46,7 @@ import java.util.Random;
 
 
         }
+
+
 
    }

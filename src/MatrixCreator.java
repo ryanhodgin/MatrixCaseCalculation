@@ -4,6 +4,11 @@ public class MatrixCreator {
         public double b;
         public double c;
         public double d;
+        public double e = 0;
+        public double f;
+        public double g;
+        public double h;
+        public double i;
 
 
 
@@ -15,9 +20,29 @@ public class MatrixCreator {
             this.d = d;
         }
 
-        public String toString(){
-            return "[ " + a + " " + b + " ]\n" + "[ " + c + " " + d + " ]";
+        public MatrixCreator(double a, double b, double c, double d, double e, double f, double g, double h, double i){
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            this.d = d;
+            this.e = e;
+            this.f = f;
+            this.g = g;
+            this.h = h;
+            this.i = i;
+        }
 
+        public String toString(){
+
+            if(e == 0) {
+
+                return "[ " + a + " " + b + " ]\n" + "[ " + c + " " + d + " ]";
+            }
+            else {
+                return "[ " + a + " " + b + " " + c + " ]" + "\n" +
+                        "[ " + d + " " + e + " " + f + " ]" + "\n" +
+                        "[ "  + g + " " + h + " " + i + " ]\n";
+            }
         }
 
         public MatrixCreator multiply(MatrixCreator m2){
@@ -64,6 +89,16 @@ public class MatrixCreator {
             }
 
         }
+        // Make a^2 + d^2 + g^2 = 1 && b^2 + e^2 + h^2 = 1 && column 3 same
+
+        // ab  + de + gh = 0 && bc + ef + hi = 0 && ac + df + gi = 0
+
+
+        // a is random
+        // d is random between 1 - a^2 and 0
+        // g = 1 - a ^ 2 - d ^ 2
+
+
 
 
 
